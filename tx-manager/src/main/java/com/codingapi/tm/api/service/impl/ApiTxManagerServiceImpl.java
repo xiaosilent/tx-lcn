@@ -5,7 +5,7 @@ import com.codingapi.tm.api.service.ApiTxManagerService;
 import com.codingapi.tm.compensate.model.TransactionCompensateMsg;
 import com.codingapi.tm.compensate.service.CompensateService;
 import com.codingapi.tm.config.ConfigReader;
-import com.codingapi.tm.manager.service.EurekaService;
+import com.codingapi.tm.manager.service.MicroService;
 import com.codingapi.tm.manager.service.TxManagerSenderService;
 import com.codingapi.tm.manager.service.TxManagerService;
 import com.codingapi.tm.model.TxServer;
@@ -24,7 +24,7 @@ public class ApiTxManagerServiceImpl implements ApiTxManagerService {
     private TxManagerService managerService;
 
     @Autowired
-    private EurekaService eurekaService;
+    private MicroService eurekaService;
 
     @Autowired
     private CompensateService compensateService;
@@ -50,8 +50,8 @@ public class ApiTxManagerServiceImpl implements ApiTxManagerService {
 
 
     @Override
-    public boolean sendCompensateMsg(long currentTime, String groupId, String model, String address, String uniqueKey, String className, String methodStr, String data, int time) {
-        TransactionCompensateMsg transactionCompensateMsg = new TransactionCompensateMsg(currentTime, groupId, model, address, uniqueKey, className, methodStr, data, time, 0);
+    public boolean sendCompensateMsg(long currentTime, String groupId, String model, String address, String uniqueKey, String className, String methodStr, String data, int time,int startError) {
+        TransactionCompensateMsg transactionCompensateMsg = new TransactionCompensateMsg(currentTime, groupId, model, address, uniqueKey, className, methodStr, data, time, 0,startError);
         return compensateService.saveCompensateMsg(transactionCompensateMsg);
     }
 

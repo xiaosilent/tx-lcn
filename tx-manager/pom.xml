@@ -5,7 +5,7 @@
 
     <groupId>com.codingapi</groupId>
     <artifactId>tx-manager</artifactId>
-    <version>4.0.3</version>
+    <version>4.0.3.M1</version>
     <packaging>jar</packaging>
 
     <name>tx-manager</name>
@@ -118,6 +118,12 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
         </plugins>

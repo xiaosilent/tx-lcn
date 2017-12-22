@@ -9,7 +9,7 @@
 
 ## 官方网址
 
-[www.txlcn.org](http://www.txlcn.org)
+[https://www.txlcn.org](https://www.txlcn.org)
 
 
 ## 框架特点
@@ -26,7 +26,7 @@
 
 ## 原理介绍
 
-[原理介绍](https://github.com/codingapi/tx-lcn/wiki)  [视频讲解](http://www.txlcn.org/v4/index.html)
+[原理介绍](https://github.com/codingapi/tx-lcn/wiki)  [视频讲解](https://www.txlcn.org/v4/index.html)
 
 ## 目录说明
 
@@ -108,6 +108,60 @@ tx-plugins-redis 是LCN 对于redis模块的插件支持（功能暂未实现）
 
     public void d(){}
 ```
+
+## maven 中心库地址
+
+
+
+```
+
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>tx-client</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>
+
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>tx-plugins-db</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>
+
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>tx-plugins-nodb</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>
+
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>transaction-dubbo</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>      
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>transaction-motan</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>  
+
+
+<dependency>
+    <groupId>com.codingapi</groupId>
+    <artifactId>transaction-springcloud</artifactId>
+    <version>${lcn.last.version}</version>
+</dependency>    
+        
+```
+
+依赖gradle等形式，见中心库   
+
+[http://mvnrepository.com/search?q=codingapi](http://mvnrepository.com/search?q=codingapi)
+
 
 ## demo演示教程
 

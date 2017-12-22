@@ -1,5 +1,6 @@
 package com.codingapi.ribbon.loadbalancer;
 
+
 import com.codingapi.tx.aop.bean.TxTransactionLocal;
 import com.lorne.core.framework.utils.encode.MD5Util;
 import com.netflix.loadbalancer.Server;
@@ -33,6 +34,13 @@ public class LcnLoadBalancerRule {
 
 
 			String key = MD5Util.md5((groupId + "_" + appName).getBytes());
+
+			//如果只有一个可调用模块，则用当前的，且需要将数据记录到redis中
+			if(servers.size() == 1){
+				putServer(key, txTransactionLocal, server);
+				logger.info("LCNBalanceProxy -> only one server available");
+				return server;
+			}
 
 			Server oldServer =getServer(txTransactionLocal,servers,key);
 			if(oldServer != null){
